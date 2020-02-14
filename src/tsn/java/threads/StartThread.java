@@ -22,9 +22,9 @@ public class StartThread { // РАБОТА С ПОТОКАМИ, ПОТОКОВЫ
         System.out.println("Активирован потоковый барьер для " + numSolutions + " потоков ...");
 
         // Запускаем нужное количество потоков-решиней задачи
-        for (int i = 1; i <= numSolutions; i++) { 
-            new SolvingThread(cyclicBarrier, solvingProblem, i); // Запуск потоков-задач
-            System.out.println("Запущен поток " + i + " ...");
+        for (int numSolution = 1; numSolution <= numSolutions; numSolution++) { 
+            new SolvingThread(cyclicBarrier, solvingProblem, numSolution); // Запуск потоков-задач
+            System.out.println("Запущен поток " + numSolution + " ...");
         }
         
         System.out.println("Основной поток программы переводится в сон с ожиданием выполнения всех задач...");
