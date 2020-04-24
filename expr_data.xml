@@ -1,8 +1,35 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
 <properties>
-<comment>Fri Feb 14 22:04:04 ALMT 2020</comment>
-<entry key="2">0.8333333</entry>
-<entry key="1">0.8333333</entry>
-<entry key="0">0.8333333</entry>
+<comment>Fri Apr 24 13:27:32 ALMT 2020</comment>
+<entry key="4_b">0.0</entry>
+<entry key="4_a">1.0</entry>
+<entry key="6_c">0.33333334</entry>
+<entry key="6_b">6.0</entry>
+<entry key="6_a">2.0</entry>
+<entry key="8_c">1.0</entry>
+<entry key="8_b">4.0</entry>
+<entry key="8_a">4.0</entry>
+<entry key="1_c">0.125</entry>
+<entry key="1_b">8.0</entry>
+<entry key="1_a">1.0</entry>
+<entry key="3_c">Infinity</entry>
+<entry key="3_b">0.0</entry>
+<entry key="3_a">4.0</entry>
+<entry key="5_c">0.375</entry>
+<entry key="5_b">8.0</entry>
+<entry key="5_a">3.0</entry>
+<entry key="7_c">0.6</entry>
+<entry key="7_b">5.0</entry>
+<entry key="7_a">3.0</entry>
+<entry key="9_c">0.5</entry>
+<entry key="9_b">8.0</entry>
+<entry key="0_c">0.0</entry>
+<entry key="9_a">4.0</entry>
+<entry key="0_b">2.0</entry>
+<entry key="0_a">0.0</entry>
+<entry key="2_c">1.2857143</entry>
+<entry key="2_b">7.0</entry>
+<entry key="2_a">9.0</entry>
+<entry key="4_c">Infinity</entry>
 </properties>

@@ -11,10 +11,10 @@ import java.util.Properties;
 // Финальный поток решения всех задач
 // Вызывается автоматически CyclicBarrier, когда выполнятся все задачи
 public class FinalThread implements Runnable { // ФИНАЛЬНЫЙ ПОТОК-ЗАДАЧА
-    float[] arraySolutions; // Массив вычисленных значений заданий
+    float[][] arraySolutions; // Массив вычисленных значений заданий
     volatile boolean completion; // Флаг завершения данного потока
 
-    FinalThread(float[] arraySolutions) {
+    FinalThread(float[][] arraySolutions) {
         this.arraySolutions = arraySolutions;
         this.completion = false; // Инициализация флага завершения данного потока
     }
@@ -23,8 +23,8 @@ public class FinalThread implements Runnable { // ФИНАЛЬНЫЙ ПОТОК-
     public void run() {
         System.out.println("Активирован финальный поток потокового барьера ...");
         System.out.println("Полученные решения от потоков: ");
-        // ------------------------------------------------------- АЛГОРИТМ РЕШЕНИЯ ВАРИАНТА ЗАДАНИЯ ---
 
+        // -------------------------------------------------------
         String dir = new File(".").getAbsoluteFile().getParentFile().getAbsolutePath()
                 + System.getProperty("file.separator");
         String FileName = dir + "expr_data.xml"; // Имя файла с настройками 
@@ -43,9 +43,12 @@ public class FinalThread implements Runnable { // ФИНАЛЬНЫЙ ПОТОК-
         }
 
         for (int i = 0; i < arraySolutions.length; i++) { // Цикл по результатам вычислений
-            System.out.print(arraySolutions[i]); // Выводим на экран результат i-го вычисления
+            System.out.printf("Решение потока %d: %f для %f / %f", i+1, 
+                    arraySolutions[i][2], arraySolutions[i][0], arraySolutions[i][1]); // Выводим на экран результат i-го вычисления
             System.out.println(" --> сохраняем этот результат в XML-файле ...");
-            p.setProperty(String.valueOf(i), String.valueOf(arraySolutions[i])); // Сохраняем результат i-го вычисления
+            p.setProperty(String.valueOf(i)+"_a", String.valueOf(arraySolutions[i][0])); // Сохраняем a результата i-го вычисления
+            p.setProperty(String.valueOf(i)+"_b", String.valueOf(arraySolutions[i][1])); // Сохраняем b результата i-го вычисления
+            p.setProperty(String.valueOf(i)+"_c", String.valueOf(arraySolutions[i][2])); // Сохраняем c результата i-го вычисления
         }
         try {
             p.storeToXML(new FileOutputStream(FileName), new Date().toString()); // Сохраняем XML-файл на диск

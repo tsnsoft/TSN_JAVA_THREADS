@@ -5,8 +5,12 @@ import java.util.concurrent.CyclicBarrier;
 public class StartThread { // РАБОТА С ПОТОКАМИ, ПОТОКОВЫМИ БАРЬЕРАМИ И БЛОКИРОВКАМИ
 
     public static void main(String args[]) throws InterruptedException {
-        final int numSolutions = 3; // Количество потоков-задач
-        float[] arraySolutions = new float[numSolutions];  // Массив вычисленных значений заданий
+        final int numSolutions = 10; // Количество потоков-задач
+        final int numSolutionsData = 3; // Количество данных в задаче
+
+        // Массив вычисленных значений заданий
+        // [][0] - a, [][1] - b, [][2] - c
+        float[][] arraySolutions = new float[numSolutions][numSolutionsData]; 
         
         // Объект-вычислитель значений
         SolvingProblem solvingProblem = new SolvingProblem(arraySolutions); 
@@ -36,4 +40,3 @@ public class StartThread { // РАБОТА С ПОТОКАМИ, ПОТОКОВЫ
         System.out.println("Основной поток и программа успешно завершены!!!");
     }
 }
-
